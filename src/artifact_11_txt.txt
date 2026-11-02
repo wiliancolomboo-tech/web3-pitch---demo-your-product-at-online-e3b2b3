@@ -1,0 +1,11 @@
++-----------------------------------------------------------------------------------+
+|                           INCIDENT TRIAGE & RECOVERY MATRIX                       |
++-------------------+---------------------------------------------------------------+
+| Alert             | Slack: "🚨 FlashSentinel Tripped on Vault..."                 |
+| Trigger Latency   | < 400ms (Current Slot)                                        |
+| Primary Action    | 1. Query explorer tx to isolate malicious drain origin.       |
+|                   | 2. Audit pool balance via:                                    |
+|                   |    $ spl-token balance <VAULT_PUBKEY> -u devnet               |
+| Governance Action | 3. After vulnerability isolation, invoke timelocked unfreeze: |
+|                   |    $ anchor run reset-vault --vault <VAULT_PUBKEY>            |
++-------------------+---------------------------------------------------------------+

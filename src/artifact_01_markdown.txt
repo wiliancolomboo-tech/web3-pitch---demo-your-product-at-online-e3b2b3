@@ -1,0 +1,29 @@
+# Solana Demo Day Escrow Scoring Platform  
+## Technical Deliverable for **“Pitch & Demo Your Product at Online Demo Day”**
+
+## 1) Executive Technical Summary & System Value Proposition
+
+### Product: **DemoChain** (On-chain Demo Day Scoreboard)
+A production-ready Solana Anchor program that supports:
+- event creation by organizer
+- judge allow-listing
+- team/project registration
+- immutable judge scoring
+- automatic best-score determination (average-based, tie-safe)
+- time-gated submission/voting windows
+- keeper-assisted settlement
+- winner payout from event vault (PDA)
+
+### Why this wins for demo-day bounties
+1. **Provable integrity**: Scores are anchored on-chain, impossible to tamper after commit.
+2. **Scalable UX + verifiable governance**: One vote/account guard prevents duplicate judging per project.
+3. **Keeper-friendly operations**: Finalization is O(1) on-chain and can be triggered automatically.
+4. **Compute-aware design**: No O(n) loops in hot instructions.
+5. **Demo-ready**: End-to-end localnet demonstration in <5 min with Anchor + TS tests.
+
+### Problem solved
+Most online demo events use spreadsheets/tokens of trust; disputes happen over late votes, duplicate scoring, and opaque winner selection. DemoChain removes these risks with deterministic rules and low-friction on-chain arbitration.
+
+---
+
+## 2) Complete Visual Architecture Flowchart

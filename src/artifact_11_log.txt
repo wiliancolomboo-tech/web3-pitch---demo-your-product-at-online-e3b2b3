@@ -1,0 +1,7 @@
+Program KroN1S9oU4oXpW32B8v1Yq9A9qA6v6w8K6uJ9iS2kRo invoke [1]
+Program log: Instruction: ExecuteCrankMatch
+Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]
+Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 182350 compute units
+Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success
+Program KroN1S9oU4oXpW32B8v1Yq9A9qA6v6w8K6uJ9iS2kRo consumed 26450 of 200000 compute units
+Program KroN1S9oU4oXpW32B8v1Yq9A9qA6v6w8K6uJ9iS2kRo success

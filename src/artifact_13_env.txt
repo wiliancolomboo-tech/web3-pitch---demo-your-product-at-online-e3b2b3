@@ -1,0 +1,8 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLANA_WS_URL=wss://api.devnet.solana.com
+SENTINEL_KEYPAIR_PATH=./secrets/sentinel-keypair.json
+PROGRAM_ID=SntnL11111111111111111111111111111111111111
+VAULT_AUTHORITY_PUBKEY=YOUR_VAULT_AUTHORITY_PUBLIC_KEY
+DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+RESEND_API_KEY=re_123456789abcdef
+ALERT_EMAIL_RECIPIENT=security-oncall@yourfirm.com

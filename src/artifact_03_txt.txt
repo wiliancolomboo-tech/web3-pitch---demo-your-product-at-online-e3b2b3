@@ -1,0 +1,17 @@
++-------------------+
+                      |   Uninitialized   |
+                      +-------------------+
+                                |
+                                | initialize_vault (Authority, Quota, Window)
+                                v
+                      +-------------------+
+        +------------>|      ACTIVE       |<------------+
+        |             +-------------------+             |
+        |                       |                       |
+        |                       | trigger_circuit_breaker
+        |                       | (Sentinel / Authority)|
+        |                       v                       |
+        |             +-------------------+             |
+        +-------------|      FROZEN       |-------------+
+   unpause_vault      +-------------------+
+   (Authority Only)

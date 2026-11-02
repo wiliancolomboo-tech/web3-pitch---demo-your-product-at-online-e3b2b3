@@ -1,0 +1,7 @@
+Treasury risk on Solana solved. 🛡️
+
+Linear token vesting and manual milestone grants fail enterprises when contributors ghost or SLAs break. 
+
+Introducing @KhoraProtocol: The Verifiable Autonomous Escrow & Dynamic Streaming Engine on @Solana. 
+
+Built with @coral_xyz Anchor & turnkey enterprise alerting. 🧵👇 #SolanaDemoDay

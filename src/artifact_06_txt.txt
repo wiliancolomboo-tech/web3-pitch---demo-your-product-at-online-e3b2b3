@@ -1,0 +1,10 @@
++-----------------------------------------------------------------------------------------------+
+| TEST CASE               | TARGET SCENARIO                | VALIDATION ASSERTION  | STATUS     |
++-------------------------+--------------------------------+-----------------------+------------+
+| TC-INIT-001             | Stream creation with SOL vault | PDA balance == 3 SOL  | PASS (100%)|
+| TC-AUTH-002             | Attacker attempts withdrawal   | Error: Unauthorized   | PASS (100%)|
+| TC-FLOW-003             | Continuous linear vesting      | Balance delta > fee   | PASS (100%)|
+| TC-CANCEL-004           | Attacker attempts cancellation | Error: Unauthorized   | PASS (100%)|
+| TC-CANCEL-005           | Atomic split & sender refund   | Vault depleted to 0   | PASS (100%)|
+| TC-STATE-006            | Re-entrancy on inactive stream | Error: StreamInactive | PASS (100%)|
++-------------------------+--------------------------------+-----------------------+------------+

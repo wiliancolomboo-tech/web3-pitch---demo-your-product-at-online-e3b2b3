@@ -1,0 +1,1 @@
+docker logs -f aetherstream-telemetry-engine

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: streamsentry-sentinel
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=StrSm11111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - AUDIT_EMAIL_TO=${AUDIT_EMAIL_TO}
+      - SENTINEL_PRIVATE_KEY=${SENTINEL_PRIVATE_KEY}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

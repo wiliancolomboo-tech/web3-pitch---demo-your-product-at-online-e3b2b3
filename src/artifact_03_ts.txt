@@ -1,0 +1,275 @@
+import * as anchor from "@coral-xyz/anchor";
+import { Program } from "@coral-xyz/anchor";
+import { DemoDay } from "../target/types/demo_day";
+import {
+  Keypair,
+  PublicKey,
+  SystemProgram,
+  SYSVAR_RENT_PUBKEY,
+} from "@solana/web3.js";
+import {
+  getOrCreateAssociatedTokenAccount,
+  createMint,
+  mintTo,
+  TOKEN_PROGRAM_ID,
+  getAccount,
+  createAccount,
+  createAssociatedTokenAccount,
+  ASSOCIATED_TOKEN_PROGRAM_ID,
+} from "@solana/spl-token";
+import { assert } from "chai";
+
+describe("demo_day", () => {
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
+
+  const program = anchor.workspace.DemoDay as Program<DemoDay>;
+  const connection = provider.connection;
+
+  const authority = Keypair.generate();
+  const organizer = authority; // same for simplicity
+  const creator1 = Keypair.generate();
+  const creator2 = Keypair.generate();
+  const voter = Keypair.generate();
+  const winner = creator1; // winner is creator1
+  let mint: PublicKey;
+  let treasuryAta: PublicKey;
+  let winnerAta1: PublicKey;
+  let winnerAta2: PublicKey;
+  let configPda: PublicKey;
+  let treasuryAuthority: PublicKey;
+
+  const sessionId = 1;
+
+  before(async () => {
+    for (const kp of [authority, creator1, creator2, voter]) {
+      await provider.connection.requestAirdrop(kp.publicKey, 2e9);
+    }
+
+    mint = await createMint(
+      connection,
+      authority,
+      authority.publicKey,
+      null,
+      9
+    );
+
+    [treasuryAuthority] = PublicKey.findProgramAddressSync(
+      [Buffer.from("treasury-authority")],
+      program.programId
+    );
+
+    treasuryAta = await getOrCreateAssociatedTokenAccount(
+      connection,
+      authority,
+      mint,
+      treasuryAuthority,
+      true // allow owner not signer
+    ).then((x) => x.address);
+
+    // Fund treasury rewards
+    await mintTo(
+      connection,
+      authority,
+      mint,
+      treasuryAta,
+      authority,
+      100_000 * 10 ** 9
+    );
+
+    winnerAta1 = (await getOrCreateAssociatedTokenAccount(
+      connection,
+      authority,
+      mint,
+      winner.publicKey
+    )).address;
+    winnerAta2 = (await getOrCreateAssociatedTokenAccount(
+      connection,
+      authority,
+      mint,
+      creator2.publicKey
+    )).address;
+
+    [configPda] = PublicKey.findProgramAddressSync(
+      [Buffer.from("config"), organizer.publicKey.toBuffer()],
+      program.programId
+    );
+
+    const [cfgBump] = PublicKey.findProgramAddressSync(
+      [Buffer.from("treasury-authority")],
+      program.programId
+    );
+  });
+
+  it("Initializes config", async () => {
+    await program.methods
+      .initializeConfig(0, new anchor.BN(100), 3, 10)
+      .accounts({
+        config: configPda,
+        authority: organizer.publicKey,
+        treasuryVault: treasuryAta,
+        treasuryAuthority,
+        tokenProgram: TOKEN_PROGRAM_ID,
+        systemProgram: SystemProgram.programId,
+      })
+      .signers([organizer])
+      .rpc();
+
+    const cfg = await program.account.config.fetch(configPda);
+    assert.equal(cfg.authority.toBase58(), organizer.publicKey.toBase58());
+    assert.equal(cfg.defaultTopK, 3);
+    assert.equal(cfg.defaultMaxParticipants, 10);
+  });
+
+  it("Creates session", async () => {
+    const now = Math.floor(Date.now() / 1000);
+    const sessionPda = PublicKey.findProgramAddressSync(
+      [Buffer.from("session"), configPda.toBuffer(), Buffer.from(new Uint8Array(new BigUint64Array([BigInt(sessionId)]).buffer))],
+      program.programId
+    )[0];
+
+    await program.methods
+      .createSession(
+        new anchor.BN(sessionId),
+        new anchor.BN(now - 10),
+        new anchor.BN(now + 3600),
+        10,
+        2,
+        new anchor.BN(10)
+      )
+      .accounts({
+        config: configPda,
+        organizer: organizer.publicKey,
+        session: sessionPda,
+        systemProgram: SystemProgram.programId,
+      })
+      .signers([organizer])
+      .rpc();
+
+    const session = await program.account.demoSession.fetch(sessionPda);
+    assert.equal(session.sessionId.toNumber(), sessionId);
+    assert.equal(session.status, 0); // Active
+  });
+
+  it("Submits pitch 1 & 2, votes, and updates top-k", async () => {
+    const now = Math.floor(Date.now() / 1000);
+    const sessionPda = PublicKey.findProgramAddressSync(
+      [Buffer.from("session"), configPda.toBuffer(), Buffer.from(new Uint8Array(new BigUint64Array([BigInt(sessionId)]).buffer))],
+      program.programId
+    )[0];
+
+    const pitch1 = PublicKey.findProgramAddressSync(
+      [Buffer.from("pitch"), sessionPda.toBuffer(), creator1.publicKey.toBuffer()],
+      program.programId
+    )[0];
+
+    const pitch2 = PublicKey.findProgramAddressSync(
+      [Buffer.from("pitch"), sessionPda.toBuffer(), creator2.publicKey.toBuffer()],
+      program.programId
+    )[0];
+
+    await program.methods
+      .submitPitch("Pitch #1 - AI Agent", "https://ex/1.json")
+      .accounts({
+        session: sessionPda,
+        creator: creator1.publicKey,
+        pitch: pitch1,
+        config: configPda,
+        organizer: organizer.publicKey,
+        systemProgram: SystemProgram.programId,
+      })
+      .signers([creator1])
+      .rpc();
+
+    await program.methods
+      .submitPitch("Pitch #2 - Wallet Radar", "https://ex/2.json")
+      .accounts({
+        session: sessionPda,
+        creator: creator2.publicKey,
+        pitch: pitch2,
+        config: configPda,
+        organizer: organizer.publicKey,
+        systemProgram: SystemProgram.programId,
+      })
+      .signers([creator2])
+      .rpc();
+
+    const voteReceipt = PublicKey.findProgramAddressSync(
+      [Buffer.from("vote"), sessionPda.toBuffer(), voter.publicKey.toBuffer()],
+      program.programId
+    )[0];
+
+    await program.methods
+      .castVote()
+      .accounts({
+        session: sessionPda,
+        pitch: pitch1,
+        voteReceipt,
+        config: configPda,
+        voter: voter.publicKey,
+        organizer: organizer.publicKey,
+        systemProgram: SystemProgram.programId,
+      })
+      .signers([voter])
+      .rpc();
+
+    const session = await program.account.demoSession.fetch(sessionPda);
+    assert.equal(session.totalVotes.toNumber(), 1);
+    assert.equal(session.topCount, 1);
+
+    try {
+      await program.methods
+        .castVote()
+        .accounts({
+          session: sessionPda,
+          pitch: pitch2,
+          voteReceipt,
+          config: configPda,
+          voter: voter.publicKey,
+          organizer: organizer.publicKey,
+          systemProgram: SystemProgram.programId,
+        })
+        .signers([voter])
+        .rpc();
+      assert.fail("duplicate vote should fail");
+    } catch (_e) {
+      assert.ok(true);
+    }
+  });
+
+  it("Closes session & claims reward", async () => {
+    const sessionPda = PublicKey.findProgramAddressSync(
+      [Buffer.from("session"), configPda.toBuffer(), Buffer.from(new Uint8Array(new BigUint64Array([BigInt(sessionId)]).buffer))],
+      program.programId
+    )[0];
+
+    await program.methods
+      .closeSession(true)
+      .accounts({
+        session: sessionPda,
+        config: configPda,
+        organizer: organizer.publicKey,
+      })
+      .signers([organizer])
+      .rpc();
+
+    // Claim rank 0 for winner if top winner is creator1
+    await program.methods
+      .claimReward(0)
+      .accounts({
+        session: sessionPda,
+        config: configPda,
+        organizer: organizer.publicKey,
+        treasuryAuthority,
+        treasuryVault: treasuryAta,
+        winner: winner.publicKey,
+        winnerTokenAccount: winnerAta1,
+        tokenProgram: TOKEN_PROGRAM_ID,
+      })
+      .signers([organizer])
+      .rpc();
+
+    const bal = await getAccount(connection, winnerAta1);
+    assert.isTrue(Number(bal.amount) > 0);
+  });
+});

@@ -1,0 +1,14 @@
+1/3 🚨 Traditional Web3 Demo Days are broken. Soft VC commitments evaporate, winners wait 60+ days for manual prize disbursements, and audience voting is Sybil-farmed. 
+
+Presenting @VeriPitch: The high-throughput on-chain Demo Day arena built on @Solana. ⚡️🦀
+
+2/3 Why VeriPitch changes the game:
+🔒 Escrow-backed prize vaults lock funds before pitches begin
+⚖️ Cryptographic on-chain judge scoring with deterministic weights
+🗳️ Sybil-resistant Quadratic Audience Voting
+⚡️ Instant, automated prize payout in 400ms straight to founder wallets!
+
+3/3 Powered by @coral_xyz Anchor & integrated seamlessly with Discord, Slack, and @resend for turnkey enterprise notifications.
+
+Live demo & open-source codebase: github.com/veripitch/veripitch-protocol
+Built for the @Solana Online Demo Day! 🚀 #Solana #Blink #Web3Grants

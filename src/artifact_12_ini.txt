@@ -1,0 +1,7 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=Sent1neL11111111111111111111111111111111111
+ORACLE_KEYPAIR_PATH=./secrets/oracle.json
+RESEND_API_KEY=re_123456789_enterprise_token
+RESEND_FROM_EMAIL=agent@solsentinel.io
+AUDIT_EMAIL=treasury@company.com
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

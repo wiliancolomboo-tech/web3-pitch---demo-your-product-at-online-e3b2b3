@@ -1,0 +1,8 @@
+PORT=8080
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLANA_WS_URL=wss://api.devnet.solana.com
+STREAMGUARD_PROGRAM_ID=StrGUARD11111111111111111111111111111111111
+RESEND_API_KEY=re_live_xxxxxxxxxxxxxxxxxxxx
+RESEND_FROM_EMAIL=treasury@streamguard.io
+RESEND_ALERT_TO=risk-desk@sponsor.com
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

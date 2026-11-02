@@ -1,0 +1,6 @@
+We deployed PitchPulse to Solana Devnet with a turnkey Docker orchestrator, 100% coverage Anchor test suite, and real-time Prometheus telemetry. 
+
+Ready to eliminate commitment drop-off for your accelerator or hackathon?
+
+📦 Code & Runbook: https://github.com/pitchpulse/solana-engine
+cc @solana @SuperteamDAO #SolanaDemoDay #Solana

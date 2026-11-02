@@ -1,0 +1,16 @@
+1/3 🚨 Introducing SolPulse Sentinel: Autonomous, sub-second treasury risk containment built natively for @Solana.
+
+When exploits happen, manual multisigs are too slow. SolPulse bridges on-chain circuit breakers with off-chain TEE keepers to quarantine compromised capital in <800ms. ⚡🛡️
+
+2/3 Built with Anchor & integrated with enterprise tooling:
+✅ Atomic quarantine vault isolation 
+✅ Deterministic zero-float integer math
+✅ Enterprise incident broadcast via @resend & Webhooks
+✅ Zero-downtime keeper engine with automated failover
+
+See how we prevent the next $100M flash-drain 🧵👇
+
+3/3 🏆 Demo Day is live! Watch our end-to-end live exploit simulation where our keeper detects pool manipulation, freezes the vault, isolates tokens to PDA timelocks, and delivers enterprise alerts in the exact same slot.
+
+GitHub & Live Demo: https://github.com/solpulse/solpulse-sentinel
+#Solana #DeFi #DemoDay @Solana @solana_devs

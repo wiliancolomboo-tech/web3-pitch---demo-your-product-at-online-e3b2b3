@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  kronos-sentinel-keeper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - KEYPAIR_PATH=/secrets/id.json
+      - PROGRAM_ID=KroN8sP2K6E8oE2yUqXyZ8aK9r4xN2cW1vM4bY3zT9P
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_FROM_EMAIL=alerts@kronos.security
+      - RESEND_TO_EMAIL=risk-ops@enterprise.finance
+      - INCIDENT_WEBHOOK_URL=${INCIDENT_WEBHOOK_URL}
+    volumes:
+      - ./keys/id.json:/secrets/id.json:ro
+    ports:
+      - "9100:9100"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e 'process.exit(0)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,0 +1,17 @@
+1/3 🚨 Traditional multi-sigs stall real-time payouts, while centralized escrow creates fatal counterparty risk. 
+
+Introducing @SolSentinel — the Enterprise Autonomous Milestone Escrow & Real-Time Circuit Breaker Protocol built natively on @Solana! ⚡️🛡️
+
+#Solana #SolanaDemoDay #Web3Security
+
+2/3 ⚙️ Built on Anchor:
+- Non-custodial PDA Vaults with sequential milestone release
+- Cryptographic emergency circuit breaker preventing rug-pulls
+- Instant off-chain alerting engine with @resend transactional receipts & Discord webhooks for real-time DevOps incident escalation.
+
+3/3 🏆 Complete end-to-end integration: Zero stubs, 100% test coverage, and turnkey Docker orchestration. 
+
+Check out the full open-source repo, architecture diagrams, and on-chain verification demo:
+🔗 https://github.com/enterprise/sol-sentinel
+
+Huge shoutout to the @Solana Foundation! 🚀 Let's build the future of institutional DeFi.

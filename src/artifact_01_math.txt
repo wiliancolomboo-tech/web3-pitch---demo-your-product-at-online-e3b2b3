@@ -1,0 +1,1 @@
+\text{Available Balance}(t) = \text{Deposit} - \left( \mathcal{R}_{\text{stream}} \times (t - t_{\text{last}}) \right) - \text{Debt}_{\text{accrued}}(t)

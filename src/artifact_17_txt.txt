@@ -1,0 +1,8 @@
+Check out our live Demo Day submission:
+✅ 100% test coverage with Anchor Rust smart contracts
+✅ Turnkey 1-click Docker deployment
+✅ Production CLI & webhook notification relayer
+
+Github repo & architecture breakdown: https://github.com/aegis-stream/protocol
+
+Built on @Solana. The future of enterprise capital streaming is live! 🚀

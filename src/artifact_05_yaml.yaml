@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  kronos-telemetry-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=KRONoSkp82zBfqz5XhHwF4M9e7hX4k1nB2aK5u6mP9Q
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    ports:
+      - "8080:8080"

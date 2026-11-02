@@ -1,0 +1,6 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=HLXStrM111111111111111111111111111111111111
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+RESEND_API_KEY=re_enterprise_test_token_9938210
+OPS_EMAIL_RECIPIENT=dev-ops-team@enterprise.com
+PORT=8080

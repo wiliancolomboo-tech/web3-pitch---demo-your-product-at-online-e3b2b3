@@ -1,0 +1,7 @@
+Why AegisStream outperforms EVM alternatives:
+
+⚡ Linear streaming math computed on-chain down to the slot
+🔒 Non-custodial PDA escrow vaults with programmable arbiter veto
+📬 Live enterprise notification daemon integrating @resend & @Slack for real-time payout alerts
+
+All running for <$0.0008 per settlement.

@@ -1,0 +1,7 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=Aeon111111111111111111111111111111111111111
+KEYPAIR_PATH=./keys/deployer-keypair.json
+RESEND_API_KEY=re_123456789_enterpriseKeySecret
+AUDIT_EMAIL=board-auditors@aeonprotocol.io
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+PORT=8080

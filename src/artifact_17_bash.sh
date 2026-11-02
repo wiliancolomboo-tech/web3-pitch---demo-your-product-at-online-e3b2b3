@@ -1,0 +1,1 @@
+npx ts-node src/cli.ts freeze --id <STREAM_ID> --keypair /path/to/authority.json

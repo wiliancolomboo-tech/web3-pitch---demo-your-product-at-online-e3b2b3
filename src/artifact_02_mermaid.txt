@@ -1,0 +1,31 @@
+flowchart TD
+    subgraph "External Enterprise Environment"
+        A1["Treasury Operator / CFO"]
+        A2["Resend API (Transactional Email)"]
+        A3["Enterprise Slack / Discord Ops"]
+    end
+
+    subgraph "Off-Chain Autonomous Agent (Docker / Node.js)"
+        B1["Price & Health Sentinel Engine"]
+        B2["Drift & Invariant Analyzer"]
+        B3["Transaction Signer (Guardian Keypair)"]
+        B4["Telemetry & Notification Broker"]
+    end
+
+    subgraph "Solana Runtime (Mainnet / Devnet)"
+        C1["Pyth / Switchboard Price Feeds"]
+        C2["SolFlow Guardian Anchor Program"]
+        C3["Treasury PDA Vault (Token A / Safe Token B)"]
+        C4["Audit Log Events & Program Logs"]
+    end
+
+    A1 -->|"1. Initialize Vault & Set Thresholds"| C2
+    C1 -->|"2. Stream Real-Time Price"| B1
+    B1 -->|"3. Evaluate Deviations"| B2
+    B2 -->|"4. Drift > Max Threshold OR Oracle Breach"| B3
+    B3 -->|"5. Execute atomic circuit_breaker() or rebalance()"| C2
+    C2 -->|"6. State Transition: Lock Vault & Swap"| C3
+    C2 -->|"7. Emit CircuitBreakerTriggered Event"| C4
+    C4 -->|"8. WebSocket Log Subscription"| B4
+    B4 -->|"9. Dispatch Markdown Alert"| A3
+    B4 -->|"10. Dispatch Executive Incident Report"| A2

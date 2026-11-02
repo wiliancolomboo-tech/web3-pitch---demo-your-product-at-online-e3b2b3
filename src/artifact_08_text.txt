@@ -1,0 +1,11 @@
+# HELP aegisflow_processed_milestones_total Total milestone events handled
+  # TYPE aegisflow_processed_milestones_total counter
+  aegisflow_processed_milestones_total 42
+
+  # HELP aegisflow_active_disputes Current count of unresolved disputes
+  # TYPE aegisflow_active_disputes gauge
+  aegisflow_active_disputes 1
+
+  # HELP aegisflow_keeper_balance_sol Current keeper wallet balance
+  # TYPE aegisflow_keeper_balance_sol gauge
+  aegisflow_keeper_balance_sol 2.418

@@ -1,0 +1,1 @@
+npx vanguard pause --stream-pda <STREAM_ACCOUNT_PUBKEY> --keypair /keys/guardian.json

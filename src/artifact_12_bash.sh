@@ -1,0 +1,1 @@
+npx ts-node cli/emergency-pause.ts --stream-id 9901 --pause true

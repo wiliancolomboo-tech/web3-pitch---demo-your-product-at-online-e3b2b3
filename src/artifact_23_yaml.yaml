@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  aegis-telemetry-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegis-stream-daemon
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=Aegis11111111111111111111111111111111111111
+      - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e 'process.exit(0)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,0 +1,8 @@
+What makes Khora Protocol 10x better?
+
+⚡ Isolated PDA Escrow Vaults with verifiable SPL transfer CPIs
+⏱️ Non-custodial Cliff & Continuous linear vesting math computed on-chain
+🚨 Real-time event listener binding Solana WebSockets directly to Slack, Discord & Resend API
+🔐 Cryptographic clawback guarantees
+
+Code is fully open-source & audited. 🛠️

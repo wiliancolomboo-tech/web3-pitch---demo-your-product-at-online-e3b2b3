@@ -1,0 +1,5 @@
+We deployed live to Devnet, completed our end-to-end QA test suite with 100% assertions, and containerized the entire telemetry stack in 1-click Docker.
+
+Watch the full live demo & inspect the contracts:
+GitHub: https://github.com/enterprise-khora/khora-engine
+Demo Day Judges: Let's bring institutional escrow to Solana together! 🤝🚀

@@ -1,0 +1,22 @@
+1/3 🚨 Autonomous AI agents on Solana are one prompt-injection away from draining institutional treasuries in 400ms. 
+
+Introducing SentinelVault: The sub-second programmable circuit breaker and policy-governed escrow built natively for @Solana. 🛡️⚡
+
+#Solana #AI #DeFi #DemoDay
+
+---
+
+2/3 Why did we build SentinelVault?
+- ⏱️ Real-time rolling velocity caps (max spend per epoch)
+- 🛑 Autonomous on-chain freeze triggered the exact millisecond anomalous volume hits
+- ⚡ Asymmetric emergency operator halt + Multi-sig resumption
+- 📡 Instant webhook & @Resend incident dispatch
+
+---
+
+3/3 Production-ready, fully tested Anchor suite, zero stubs, and turnkey Dockerized event indexing daemon. 
+
+Ready to make autonomous AI treasury execution safe on @solana. 
+
+Check out our full live demo & GitHub repo! 👇🚀
+[Link to Demo / GitHub]

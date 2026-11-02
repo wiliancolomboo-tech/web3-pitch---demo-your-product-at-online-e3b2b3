@@ -1,0 +1,12 @@
+GET /health
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": "healthy",
+  "programId": "Aegis11111111111111111111111111111111111111",
+  "keeperSigner": "7vW9s8jFq...3Xb",
+  "activeStreamsTracked": 14,
+  "lastSweepTimestamp": 1711802930,
+  "cluster": "devnet"
+}

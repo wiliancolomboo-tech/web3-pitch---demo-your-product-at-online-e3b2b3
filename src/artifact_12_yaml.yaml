@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  solsentinel-watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solsentinel_watcher_daemon
+    restart: unless-stopped
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - SENTINEL_KEYPAIR_PATH=/secrets/sentinel-keypair.json
+      - PROGRAM_ID=SntnL11111111111111111111111111111111111111
+      - VAULT_AUTHORITY_PUBKEY=${VAULT_AUTHORITY_PUBKEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ALERT_EMAIL_RECIPIENT=${ALERT_EMAIL_RECIPIENT}
+    volumes:
+      - ./secrets:/secrets:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"

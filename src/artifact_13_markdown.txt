@@ -1,0 +1,19 @@
+1/3 🛡️ Excited to debut @SolGuardSentinel for the Solana Online Demo Day! 
+
+Institutional DeFi treasuries secure hundreds of millions on @solana, but human multisig coordination takes 15-45 minutes. Exploit drains happen in 800ms. 
+
+We built the sub-second circuit breaker Solana treasuries need. ⚡🧵👇
+
+2/3 ⚙️ How it works:
+• On-chain deterministic outflow velocity tripwires
+• Cryptographic keeper heartbeat monitors
+• Sub-slot atomic quarantine freezes
+• Enterprise alert dispatch via @resend & Webhooks before the slot even ends!
+
+Zero withdrawal keys for keepers. 100% non-custodial protection. 🔐
+
+3/3 🚀 Built production-ready with @AnchorLang, complete automated test coverage, Docker turnkey deployment, and full open-source repo! 
+
+Check out our demo, live Devnet transactions, and test suite:
+🔗 github.com/solguard-sentinel/engine
+Demo Day Judges: Let's make treasury drains history on @solana! 🌐💥

@@ -1,0 +1,41 @@
+========================================================================================
+TIMECODE  | AUDIO / SPOKEN NARRATIVE                      | VISUAL SCREENPLAY
+========================================================================================
+[00:00 -  | "Solana executes at the speed of light, yet   | [SCENE 1: High-contrast slide]
+ 00:20]   | idle liquidity is trapped in static AMMs,     | Visualizing locked TVL in Orca &
+          | while flash-loans on traditional chains leak  | Raydium vs. untapped MEV backrun
+          | compute units and expose users to reentrancy. | arbitrage flows. Animated red X on
+          | Meet ApexStream: The Sub-Millisecond JIT      | slow, fragmented liquidity loans.
+          | Flash-Liquidity and Autonomous Yield Engine." |
+
+[00:20 -  | "ApexStream unlocks instantaneous,            | [SCENE 2: Architecture Graphic]
+ 00:45]   | uncollateralized lending directly on Solana's | Mermaid diagram overlay showing the
+          | Sealevel runtime. By leveraging native sysvar | atomic transaction bundling:
+          | instruction introspection, we inspect the     | flash_borrow -> Arbitrage Swap ->
+          | transaction instruction schedule before loan  | flash_repay in a single slot.
+          | disbursement, guaranteeing deterministic      |
+          | repayment with mathematically zero risk of    |
+          | bad debt."                                    |
+
+[00:45 -  | "Watch the terminal: We invoke our flash loan | [SCENE 3: Live Terminal Execution]
+ 01:15]   | test suite. In a single slot, the borrower    | Split-screen showing `anchor test`.
+          | borrows 2,000 tokens, executes an Orca        | Terminal logs showing CU consumption
+          | liquidity arbitrage, and repays principal     | dropping from 120k to 41k CU.
+          | plus fee in under 42,000 Compute Units.       | Highlighting the test passing with
+          | When a malicious caller attempts to borrow    | "MissingRepaymentInstruction" on
+          | without repayment, our introspection guard    | the exploit simulation.
+          | instantly aborts the transaction."            |
+
+[01:15 -  | "All accrued fees flow automatically into our | [SCENE 4: Analytics & Yield PDA]
+ 01:40]   | YieldStream PDA, dynamically boosting LP APY  | UI dashboard showing real-time LP
+          | without manual harvesting or staking locks.   | streaming yields ticking upward with
+          | ApexStream is not just code; it is an ultra-  | zero manual claims required.
+          | lean primitive designed for institutional HFT |
+          | firms and Solana DeFi protocols."             |
+
+[01:40 -  | "ApexStream gives Solana developers what they | [SCENE 5: Pitch Conclusion]
+ 02:00]   | need: instantaneous capital, mathematical     | ApexStream branding, GitHub QR code,
+          | invulnerability, and sub-millisecond execution| and devnet program address.
+          | efficiency. We are ready to deploy on mainnet.| "ApexStream: Realize Solana's Speed."
+          | Vote ApexStream for First Place!"             |
+========================================================================================

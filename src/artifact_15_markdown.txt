@@ -1,0 +1,17 @@
+1/3 🌊 Introducing @StreamVault on @Solana: The next evolution of high-frequency treasury streaming & automated escrow governance.
+
+Legacy vesting contracts expose millions to non-performing counterparties. StreamVault fixes this with sub-second streaming & guardian triggers. ⚡️
+
+2/3 🛠 Built for institutional operations:
+▫️ Deterministic per-second Sealevel streaming
+▫️ Micro-lamport & SPL Token PDA vault isolation
+▫️ Automated Keeper daemon listening to on-chain logs & dispatching real-time @Resend & @Slack alerts
+
+Zero manual intervention. Pure deterministic security. 🛡️
+
+3/3 🚢 Live demo, 100% test coverage, and turnkey Docker orchestration ready for enterprise production.
+
+Pitching live at Solana Online Demo Day! 🚀
+Check out the Github repository & testnet deployment: https://github.com/streamvault/streamvault-core
+
+#Solana #Web3 #SolanaDemoDay #Rust #Anchor #DeFi

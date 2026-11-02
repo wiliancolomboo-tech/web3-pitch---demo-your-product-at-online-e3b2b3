@@ -1,0 +1,10 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SENTINEL_PRIVATE_KEY=[1,2,3,...] # Array format keypair
+PROGRAM_ID=Shield1111111111111111111111111111111111111
+TOKEN_MINT=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+RESERVE_ACCOUNT=7xLK8mshb641wLMbhFjV76G42TqfDe7cK2Z9wF1tZ9L3
+RESEND_API_KEY=re_123456789_enterpriseKey
+ALERT_EMAIL_RECIPIENT=risk-desk@solshield.security
+OPS_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+DRIFT_THRESHOLD_BPS=500
+POLL_INTERVAL_MS=3000

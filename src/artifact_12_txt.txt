@@ -1,0 +1,10 @@
++---------------------------------------------------------------------------------------+
+|                                Incident Playbook                                      |
++---------------------+-----------------------------------------------------------------+
+| Incident Scenario   | Operational Action                                              |
++---------------------+-----------------------------------------------------------------+
+| RPC Congestion      | Agent auto-adjusts Priority Fee micro-lamports dynamically      |
+| Emergency Freeze    | Admin calls `set_emergency_pause(true)` via Anchor multisig    |
+| Slack Outage        | Telemetry safely falls back to Resend transactional email API  |
+| Insufficient Funds  | Prometheus metric triggers automated keeper keypair top-up      |
++---------------------+-----------------------------------------------------------------+

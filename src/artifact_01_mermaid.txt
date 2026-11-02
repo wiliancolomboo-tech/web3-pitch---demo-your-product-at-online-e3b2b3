@@ -1,0 +1,37 @@
+flowchart TD
+    subgraph Solana Runtime [Solana Sealevel Engine]
+        direction TB
+        VAULT[Kronos Treasury Vault Account]
+        STATE[Sentinel Registry & Policy Account]
+        ORACLE[Price Feed Aggregator / Pyth Mock]
+        LOGS[Program Event Log Emission]
+        
+        STATE -->|Validate Invariants| VAULT
+        ORACLE -->|Verify Heartbeat & Confidence| STATE
+        VAULT -->|Emit Event: CircuitBreakerTriggered| LOGS
+    end
+
+    subgraph Off-Chain Enterprise Worker [Kronos Autonomous Daemon]
+        direction TB
+        RPC_SUB[Solana WebSocket Event Listener]
+        EVAL[Risk & Volatility Evaluation Engine]
+        TX_BLDR[Atomic Transaction Assembler & Signer]
+        DISPATCH[Enterprise Alert Dispatcher]
+        
+        RPC_SUB -->|Stream Block Updates| EVAL
+        EVAL -->|Drawdown Detected| TX_BLDR
+        TX_BLDR -->|Submit Transaction via RPC| STATE
+    end
+
+    subgraph Enterprise Infrastructure [Incident Management Layer]
+        direction TB
+        SLACK[Slack / Discord Incident Webhook]
+        RESEND[Resend Enterprise Email Service]
+        PROMETHEUS[Prometheus Metrics Exporter]
+        
+        DISPATCH -->|Webhook Payload| SLACK
+        DISPATCH -->|High-Priority Alert Email| RESEND
+        DISPATCH -->|Telemetry Scrape :9100| PROMETHEUS
+    end
+
+    LOGS -.->|Listen to Account Event Stream| RPC_SUB

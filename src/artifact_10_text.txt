@@ -1,0 +1,5 @@
+Excited to present ApexStream at today's @Solana Online Demo Day! 🚀
+
+Institutional grants & payroll face a dilemma: total upfront counterparty risk vs. contractor liquidity constraints. 
+
+ApexStream solves this with real-time linear token streaming + SHA-256 deliverable attestation. 🧵👇

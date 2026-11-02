@@ -1,0 +1,19 @@
+================================================================================
+                    PITCHPULSE PROTOCOL OPERATIONAL RUNBOOK
+================================================================================
+
+1. INCIDENT: Disbursal Stream Stoppage
+   - Check Program Derived Address Vault balance:
+     $ solana balance <CAMPAIGN_VAULT_PDA>
+   - Inspect is_frozen state using Anchor CLI:
+     $ anchor account campaign <CAMPAIGN_PDA>
+   - If is_frozen == true, verify whether an automated circuit breaker was tripped.
+
+2. INCIDENT: Webhook & Transactional Dispatch Failure
+   - Query container logs:
+     $ docker logs --tail 100 -f pitchpulse_agent
+   - Validate Discord Webhook rate-limiting headers (HTTP 429 response).
+   - Verify Resend API quota limits at https://resend.com/overview.
+
+3. TELEMETRY HEALTH PROBE
+   - GET http://localhost:8080/health -> {"status":"UP","cluster":"devnet","slot":28491029}

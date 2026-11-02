@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  aurastream-telemetry-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aurastream-daemon
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - AURASTREAM_PROGRAM_ID=Aura1111111111111111111111111111111111111111
+      - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+      - RESEND_SENDER_EMAIL=treasury@aurastream.io
+      - FINANCE_AUDIT_EMAIL=cfo-ops@company.org
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

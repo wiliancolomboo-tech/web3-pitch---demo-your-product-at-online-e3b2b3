@@ -1,0 +1,16 @@
+1/3 🌊 Thrilled to debut Kalyx StreamGuard at the @Solana Online Demo Day! 🚀
+
+Lump-sum treasury payouts expose Web3 protocols to massive counterparty risks. 
+
+StreamGuard introduces sub-second linear continuous token streaming, dynamic cliff guards, and programmable circuit breakers built natively on #Solana. 🧵👇
+
+2/3 ⚡ Powered by Anchor 0.30, our custom PDA vault math eliminates idle capital while enabling instant emergency halts and deterministic unvested clawbacks.
+
+Coupled with our off-chain Sentinel Daemon, enterprises get automated, verifiable email telemetry via @resend and instant Discord ops alerts. 🛡️💻
+
+3/3 📦 100% open-source, full test suite passing, and turnkey Docker containerization ready for mainnet rollout. 
+
+Check out our full architecture, test matrix, and GitHub submission repo! 👇
+https://github.com/kalyx-labs/streamguard
+
+Huge thanks to @Solana and Demo Day judges for empowering the future of on-chain capital velocity! ☀️🌐 #SolanaDev #Web3Treasury

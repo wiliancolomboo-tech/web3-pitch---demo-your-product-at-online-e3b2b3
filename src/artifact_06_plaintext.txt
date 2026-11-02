@@ -1,0 +1,7 @@
+nexus_flow integration test suite
+    ✔ Initializes the protocol configuration (184ms)
+    ✔ Creates a conditional limit order with escrow lock (210ms)
+    ✔ Executes the order atomically by Keeper (238ms)
+    ✔ Supports graceful order creation and cancellation with total rent refund (195ms)
+
+  4 passing (1.2s)

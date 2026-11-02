@@ -1,0 +1,8 @@
+{
+  "status": "healthy",
+  "cluster": "devnet",
+  "programId": "Aegis111111111111111111111111111111111111111",
+  "wsSubscriptionActive": true,
+  "resendRelayReady": true,
+  "timestamp": 1729000000
+}

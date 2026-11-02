@@ -1,0 +1,7 @@
+2/4 Why AegisPay is built differently:
+⚡ 100% deterministic PDA-anchored escrow graph
+🔒 Cryptographic deliverable hashing (SHA-256) per milestone
+⚖️ Timelocked 3-party dispute arbitration
+📡 Real-time enterprise auditing via @resend & Slack/Discord webhooks
+
+Zero stubs. Sub-second Solana finality.

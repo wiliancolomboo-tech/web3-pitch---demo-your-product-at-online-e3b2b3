@@ -1,0 +1,14 @@
++-------------------------------------------------------------------------------------------------+
+|                                    OPERATIONAL RUNBOOK MATRIX                                   |
++--------------------------+-------------------------------------+--------------------------------+
+| Incident Scenario        | Root Cause                          | Resolution Action              |
++--------------------------+-------------------------------------+--------------------------------+
+| RPC Rate Limit 429       | Public Devnet congestion            | Failover to dedicated RPC URL  |
+|                          |                                     | in docker-compose.yml          |
+| Webhook Failure          | Slack / Resend API degraded         | Dispatcher falls back to disk  |
+|                          |                                     | buffer & exponential retry     |
+| Unauthorized Claim Tx    | Key compromise / wrong authority    | Program rejects with           |
+|                          |                                     | ChronosError 6014 instantly    |
+| Program Upgrade          | Security patch / Feature additions  | Multi-sig executes:            |
+|                          |                                     | solana program write-buffer    |
++--------------------------+-------------------------------------+--------------------------------+

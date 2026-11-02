@@ -1,0 +1,8 @@
+We shipped production-ready code:
+✅ Fully covered Anchor Program with PDA vaults
+✅ Zero-downtime Sentinel Docker container with /healthz telemetry
+✅ End-to-end integration test matrix passing 100%
+
+Check the live demo & code repo here: https://github.com/aurastream/aurastream-core
+
+Honored to pitch at Demo Day! 🚀🔥

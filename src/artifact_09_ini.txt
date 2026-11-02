@@ -1,0 +1,7 @@
+SOLANA_RPC_URL="https://api.devnet.solana.com"
+PROGRAM_ID="StrMSh1e1d111111111111111111111111111111111"
+KEEPER_KEYPAIR_PATH="./keeper-keypair.json"
+RESEND_API_KEY="re_123456789abcdef"
+SLACK_WEBHOOK_URL="https://api.example.com/webhooks/alerts/placeholder"
+NOTIFICATION_EMAIL="cfo@dao.streamshield.io"
+PORT=8080

@@ -1,0 +1,8 @@
+{
+     "status": "healthy",
+     "metrics": {
+       "totalStreamsMonitored": 1,
+       "eventsProcessed": 5,
+       "lastHeartbeat": "2025-02-23T12:00:00.000Z"
+     }
+   }

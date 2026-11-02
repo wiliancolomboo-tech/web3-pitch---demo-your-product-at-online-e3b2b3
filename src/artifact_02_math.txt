@@ -1,0 +1,1 @@
+A(t) = P \cdot \left(1 + \frac{r \cdot \Delta t}{31,536,000}\right)

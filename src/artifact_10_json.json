@@ -1,0 +1,8 @@
+{
+  "status": "HEALTHY",
+  "protocol": "KRONOS",
+  "cluster": "devnet",
+  "active_subscriptions": 14,
+  "last_slot_indexed": 284910243,
+  "uptime_seconds": 182903
+}

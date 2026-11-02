@@ -1,0 +1,52 @@
+flowchart TD
+    subgraph Client & Automation Layer
+        Payer[Payer / Employer Wallet]
+        Recipient[Stream Recipient Wallet]
+        Keeper[Off-Chain Keeper Crank Bot]
+    end
+
+    subgraph Solana Program Boundary: SolStream Core Program
+        InitStream[ix: initialize_stream]
+        DepositYield[ix: stake_idle_principal]
+        ClaimStream[ix: claim_stream_funds]
+        CancelStream[ix: cancel_stream]
+        
+        subgraph PDA State Derivations
+            GlobalConfig[PDA: global_config<br/>seeds = [b'config']]
+            StreamState[PDA: stream_state<br/>seeds = [b'stream', payer, recipient, stream_id]]
+            EscrowVault[PDA: escrow_vault<br/>seeds = [b'vault', stream_state_key]]
+        end
+
+        subgraph Security & Verification Guards
+            SignerCheck{Verify Payer / Recipient Signer}
+            TimeCheck{Clock::get().unix_timestamp >= start_time}
+            BalanceCheck{Claimable <= EscrowVault.balance}
+            StateCheck{Status == Active}
+        end
+    end
+
+    subgraph External Ecosystem CPIs
+        SPLToken[SPL Token / Token-2022 Program]
+        YieldVault[Solana Lending / Staking Pool]
+    end
+
+    %% Interactions
+    Payer -->|1. Init & Deposit Tokens| InitStream
+    InitStream -->|Derives & Stores| StreamState
+    InitStream -->|Transfers Principal via CPI| SPLToken
+    SPLToken -->|Holds Funds| EscrowVault
+
+    Keeper -->|2. Route Idle Liquidity| DepositYield
+    DepositYield -->|CPI: Deposit Unclaimed Principal| YieldVault
+
+    Recipient -->|3. Claim Vested Liquidity| ClaimStream
+    ClaimStream --> SignerCheck
+    SignerCheck --> TimeCheck
+    TimeCheck --> BalanceCheck
+    BalanceCheck --> StateCheck
+    StateCheck -->|CPI: Transfer Claimable to Recipient| SPLToken
+    SPLToken -->|Receive Vested Payout| Recipient
+
+    Payer -->|4. Clawback Unvested Balance| CancelStream
+    CancelStream --> SignerCheck
+    CancelStream -->|CPI: Unvested -> Payer, Vested -> Recipient| SPLToken

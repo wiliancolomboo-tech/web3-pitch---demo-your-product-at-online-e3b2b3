@@ -1,0 +1,5 @@
+2/ How it works under the hood:
+🔒 Strict PDA escrow locking (Zero counterparty custody)
+🔏 Deliverables anchored via SHA-256 execution proofs
+⏰ Deterministic time-lock clawbacks
+📧 Automated @Resend invoices & real-time Slack incident webhooks on every release!

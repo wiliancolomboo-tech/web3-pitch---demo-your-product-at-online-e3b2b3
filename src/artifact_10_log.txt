@@ -1,0 +1,8 @@
+aegis-stream-engine-e2e
+    ✔ QA-01: Correctly initializes stream with deterministic PDAs and exact collateral lockup (489ms)
+    ✔ QA-02: Enforces invariant: rejects underfunded deposit initialization (214ms)
+    ✔ QA-03: Allows Crank Keeper to rebalance and collect exact 5 BPS bounty (3120ms)
+    ✔ QA-04: Rejects unauthorized actors from initiating early stream cancellation (189ms)
+    ✔ QA-05: Executes prorated liquidation upon legitimate mutual cancellation (341ms)
+
+  5 passing (4.35s)

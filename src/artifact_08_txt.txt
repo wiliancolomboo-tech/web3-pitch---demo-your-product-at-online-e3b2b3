@@ -1,0 +1,3 @@
+### Operational Runbook: 1-Click Deployment Guide
+
+1. **Build & Deploy Smart Contract on Solana Devnet:**

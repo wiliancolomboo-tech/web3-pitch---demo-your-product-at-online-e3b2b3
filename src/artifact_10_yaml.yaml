@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  aegis-telemetry-sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=AegisPay11111111111111111111111111111111111
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"

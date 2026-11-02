@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  solflow-sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solflow_guardian_sentinel
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=SFG1111111111111111111111111111111111111111
+      - GUARDIAN_PRIVATE_KEY=${GUARDIAN_PRIVATE_KEY}
+      - VAULT_ADMIN_PUBLIC_KEY=${VAULT_ADMIN_PUBLIC_KEY}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_ALERT_EMAIL_TO=${RESEND_ALERT_EMAIL_TO}
+      - RESEND_FROM_EMAIL=${RESEND_FROM_EMAIL}
+      - POLL_INTERVAL_MS=3000
+      - VOLATILITY_TRIGGER_BPS=850
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"

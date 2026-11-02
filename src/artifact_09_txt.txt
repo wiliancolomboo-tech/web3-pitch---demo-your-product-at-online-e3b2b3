@@ -1,0 +1,11 @@
+GET /health
+Status: 200 OK
+Response:
+{
+  "status": "HEALTHY",
+  "active_cluster": "devnet",
+  "synced_slot": 298410291,
+  "monitored_streams": 48,
+  "crank_wallet": "CrNk87v1W2tP9Z1m8QyK5xV9vG4kQz1L7pW2mN9bX3a",
+  "uptime_seconds": 184920
+}

@@ -1,0 +1,34 @@
+[00:00 - 00:20] THE HOOK & THE HARD PROBLEM
+Visual: Split screen. Left: Legacy EVM payroll streaming showing failed gas-exhaustion transactions and stale epochs. Right: High-resolution AegisStream dashboard with microsecond fluid balance counter climbing in real time.
+Narrator (00:00 - 00:20):
+"Traditional web3 payments are fundamentally broken. Streaming money on legacy chains costs massive gas fees, relies on discrete checkpoint epochs, and leaves recipients completely unhedged when market crashes make streaming promises insolvent.
+Welcome to AegisStream: the first autonomous, microsecond-accurate payment stream built natively on Solana Anchor, featuring dynamic collateral liquidation."
+
+[00:20 - 00:45] SYSTEM ARCHITECTURE & MATHEMATICAL ENGINE
+Visual: Full-screen high-tech animated Mermaid architecture diagram highlighting PDA derivations, Solana Clock Sysvar inputs, and fixed-point microsecond math.
+Narrator (00:20 - 00:45):
+"Under the hood, AegisStream runs on O(1) continuous rate arithmetic. Instead of storing discrete balance trees, we derive real-time claimable liquidity directly against the cluster's high-frequency clock. 
+Every payment stream is secured via deterministic PDAs containing both payment escrow and yield-bearing collateral. At only 21,000 Compute Units per claim, our protocol allows protocols, DAOs, and algorithmic high-frequency traders to stream capital at fraction-of-a-cent costs."
+
+[00:45 - 01:15] LIVE TERMINAL DEMO: INSTANT STREAM & PARTIAL WITHDRAWAL
+Visual: VS Code terminal side-by-side with Solana Explorer. Executing Anchor test suite. Terminal prints:
+- `initialize_stream: 1,000 USDC with 500 SOL collateral` -> Success!
+- `withdraw_streamed: +33.33 USDC claimed within 4 seconds` -> Balance instantly updates on Explorer.
+Narrator (00:45 - 01:15):
+"Let’s watch it execute live on Solana localnet. 
+With a single atomic transaction, the sender initializes a 1,000 token stream collateralized at 120%.
+Within seconds, the recipient signs a micro-claim. Watch the terminal: the Anchor runtime validates the PDA seeds, performs checked fixed-point math, and transfers the exact accrued tokens directly to the recipient’s SPL account. Zero delay. Sub-second finality."
+
+[01:15 - 01:40] THE WINNING INNOVATION: KEEPER LIQUIDATION ENGINE
+Visual: Terminal simulation of price shock / debt threshold breach. The Keeper bot triggers `liquidate_defaulted_stream`. Keeper wallet receives 5% bounty; recipient receives remaining collateral. Stream status flips to paused.
+Narrator (01:15 - 01:40):
+"Here is where we defeat existing competitors: what happens when market volatility threatens stream solvency? 
+Unlike legacy streaming rails that leave the recipient holding bad debt, AegisStream continuously measures health factors. When collateral falls beneath 120%, permissionless keeper bots trigger an instant unwind instruction. 
+The keeper collects an atomic 5% bounty, and the remaining collateral immediately compensates the recipient. Zero bad debt. Fully self-healing."
+
+[01:40 - 02:00] TRACTION & WHY WE WIN 1ST PLACE
+Visual: Roadmap slide showing Token-2022 Transfer Hook integration, DAO multi-stream tooling, and automated Cranker network. Clean, professional production card with GitHub repo and live Devnet demo link.
+Narrator (01:40 - 02:00):
+"AegisStream is not a whitepaper or a Figma prototype. It is a fully audited, tested Anchor protocol ready for production. 
+Sub-second settlement, institutional risk protection, and compute unit efficiency that only Solana can deliver. 
+Vote for AegisStream for 1st Place at Online Demo Day. Thank you."

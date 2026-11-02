@@ -1,0 +1,8 @@
++---------------------------------------------------------------------------------------------------+
+|                                  SOLFLOW GUARDIAN ENTERPRISE SUITE                                |
++---------------------------------------------------------------------------------------------------+
+|  [On-Chain Anchor Protocol]     --> PDA-governed Vaults, Invariant Asserts, Timelock Circuit-Breaker|
+|  [Off-Chain Orchestrator CLI]   --> Autonomous Drift & Volatility Sentinel (TypeScript/Node.js)   |
+|  [Enterprise Telemetry Layer]   --> Dual Webhooks (Slack/Discord) + Resend Verified SMTP Dispatch |
+|  [Zero-Downtime Resilience]     --> Dockerized Healthcheck Daemon, Systemd Units & Jito Bundles   |
++---------------------------------------------------------------------------------------------------+

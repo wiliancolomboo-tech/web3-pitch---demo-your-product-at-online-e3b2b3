@@ -1,0 +1,6 @@
+3/4 Built for the @solana Online Demo Day! 🚀
+
+Watch automated milestone verification in action:
+Contractor commits work ➡️ PDA confirms milestone proof ➡️ Instant SPL-token payout via Anchor ➡️ Signed Resend email dispatch to CFO treasury.
+
+💻 Full open-source code & Docker runbook: github.com/aegispay/protocol

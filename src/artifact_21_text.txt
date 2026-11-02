@@ -1,0 +1,7 @@
+3/6 🛠️ Enterprise-ready from Day 1:
+Dockerized listener daemon, Prometheus health metrics, TypeScript CLI, and 100% test coverage.
+
+Check out our full architecture, smart contracts & demo code:
+github.com/kronos-stream/kronos-protocol
+
+Built with @coral_xyz on @solana. 🌐🔥

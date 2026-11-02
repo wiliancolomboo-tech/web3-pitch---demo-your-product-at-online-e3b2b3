@@ -1,0 +1,7 @@
+{
+     "status": "healthy",
+     "activeStreamsTracked": 14,
+     "processedSignatures": 1284,
+     "resendReceiptDeliveryRate": "99.8%",
+     "solanaRpcLatencyMs": 142
+   }

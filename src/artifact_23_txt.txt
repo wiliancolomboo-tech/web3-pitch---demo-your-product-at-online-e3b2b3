@@ -1,0 +1,19 @@
++-----------------------------------------------------------------------------------------+
+|                                EMERGENCY RUNBOOK: AEGISFLOW                             |
++-----------------------------------------------------------------------------------------+
+
+INCIDENT 1: RPC Node Latency / Geyser Disconnect
+  Action: Agent features built-in reconnect backoff logic. If WebSocket fails, switch the
+  SOLANA_RPC_URL in docker-compose.yml to backup private RPC endpoint (e.g., Helius/Triton)
+  and run:
+    $ docker compose up -d --force-recreate aegis-sentinel
+
+INCIDENT 2: Performance Default / Counterparty Compromise
+  Action: Sender invokes `cancel_stream` instruction using the multisig or sender CLI.
+  All unvested balance immediately transfers back to the sender treasury account, and 
+  accrued unwithdrawn amounts are settled to recipient. The state PDA is automatically 
+  closed and rent is reclaimed.
+
+TELEMETRY & LOG VERIFICATION:
+  Check live agent logstream:
+    $ docker logs -f aegisflow-agent

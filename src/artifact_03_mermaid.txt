@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Initialized: initialize_pool_guard()
+    Initialized --> Operational: configure_thresholds()
+    Operational --> Tripped: trigger_circuit_break() [Threshold Exceeded]
+    Operational --> Operational: record_heartbeat() [Healthy Slot Metrics]
+    Tripped --> Timelocked: enforce_grace_period()
+    Timelocked --> Operational: resolve_emergency() [Admin Multisig Auth]
+    Tripped --> EmergencyHalt: escalate_halt() [Critical Security Breach]
+    EmergencyHalt --> Operational: full_system_recovery() [Admin Multisig Auth]

@@ -1,0 +1,31 @@
+🧵 1/3
+Thrilled to debut @AegisFlow at the Solana Online Demo Day! 🚀
+
+Lump-sum payouts & manual payroll expose Web3 treasuries to millions in counterparty risk.
+
+AegisFlow solves this with real-time, non-custodial continuous streaming & autonomous clawback on @Solana. ⚡
+
+Here's how it works 👇
+
+---
+
+🧵 2/3
+Under the hood of AegisFlow:
+🦀 Native Anchor program with deterministic per-second streaming math
+🔒 PDA escrow vaults per contractor — zero pooled risk
+⏸️ 1-click circuit breaker pause & instant clawback of unworked funds
+⚡ Micro-withdrawals in 400ms slots with sub-cent fees
+
+Plus: Automated enterprise accounting syncing instantly to @Resend email invoices and @Slack webhooks! 📊
+
+---
+
+🧵 3/3
+Enterprise treasury operations shouldn't rely on trust when they can rely on Solana's verifiable state. 🛡️
+
+📦 100% open-source, fully tested Anchor suite, Dockerized daemon & CLI ready for handover.
+
+Check out the full repo, live demo, and spec:
+github.com/aegisflow-protocol/aegisflow
+
+Huge thanks to the sponsors for hosting! Let's build the future of autonomous finance on @solana! 🦾🌐

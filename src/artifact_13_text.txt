@@ -1,0 +1,6 @@
+PitchPulse changes the game with sub-400ms finality:
+🛡️ Native Solana PDA vaults lock investor commitments live during pitch streams.
+🔁 Automated 100% principal refunds if funding targets aren't reached by the deadline.
+⚡ Instant transactional receipts via @Resend + live deal-room alerts via Webhooks.
+
+Zero intermediaries. Pure cryptographic commitment.

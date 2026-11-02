@@ -1,0 +1,12 @@
+# Solana Network Configuration
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLFLOW_PROGRAM_ID=Flow111111111111111111111111111111111111111
+
+# Keeper Worker Signer (Raw uint8 JSON array format)
+KEEPER_PRIVATE_KEY_JSON=[1,2,3...255]
+
+# Enterprise Integration Credentials
+RESEND_API_KEY=re_123456789abcdef
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+OPERATIONAL_REPORT_EMAIL=treasury@dao.xyz
+HEALTH_PORT=8080

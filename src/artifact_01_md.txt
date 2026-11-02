@@ -1,0 +1,35 @@
+# Solana Demo Day Submission Stack — Production Deliverable
+
+## 1) Executive Technical Summary & System Value Proposition
+
+### Problem
+Online demo days often rely on ad‑hoc tooling (spreadsheets, private calls, manual voting, opaque payouts), which causes:
+- unclear submission timelines,
+- unverifiable judging history,
+- weak anti-fraud controls (vote duplication, duplicate projects),
+- and non-deterministic prize handling.
+
+### Proposed Solution
+**Demo Day On-Chain Orchestration Program** built on Solana + Anchor, with:
+- immutable event timeline and submission lifecycle,
+- one-proposal-per-team-per-event via PDA derivation,
+- judge authorization + vote uniqueness enforced on-chain via CPIs/state checks,
+- keeper-driven automatic transitions,
+- deterministic and auditable prize claim from event vault PDA.
+
+### Core Value
+- **Trust-minimized:** On-chain state for event phases, judges, votes, winners.
+- **Fairness:** cryptographically enforced uniqueness of project and vote accounts.
+- **Operator-friendly:** keeper can be any process that continuously calls a heartbeat loop.
+- **Demo-readiness:** ships with a full Rust Anchor program + TS tests + keeper bot + deployment guide.
+
+### Technical Highlights
+- PDA architecture with strict seed namespaces.
+- CU-safe account design (fixed-size structs, bounded loops).
+- Explicit state machine with transition guards.
+- Strong security model: owner checks, signer checks, duplicate-vote prevention, deadline guards.
+- Transfer from program-owned vault PDA via signed CPI.
+
+---
+
+## 2) Complete Visual Architecture Flowchart (Mermaid.js)

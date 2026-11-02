@@ -1,0 +1,8 @@
+AegisFlow Protocol Test Suite
+    ✔ 1. Initializes global engine configuration successfully (214ms)
+    ✔ 2. Creates a zero-copy TWAP order with escrow deposit (388ms)
+    ✔ 3. Executes initial slice with verified Pyth bounds (412ms)
+    ✔ 4. Fails when executing subsequent slice before interval completes (189ms)
+    ✔ 5. Allows order owner to cancel remaining slices and recover remaining tokens (305ms)
+
+  5 passing (2s)

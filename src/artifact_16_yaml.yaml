@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  aegis-sentinel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegisflow-sentinel-daemon
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=Aegis11111111111111111111111111111111111111
+      - TREASURY_ID=8881
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ALERT_EMAILS=${ALERT_EMAILS}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - SENTINEL_KEYPAIR_PATH=/app/secrets/sentinel-keypair.json
+    volumes:
+      - ./secrets:/app/secrets:ro
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"

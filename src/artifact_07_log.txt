@@ -1,0 +1,13 @@
+AegisEngine Integration Verification Matrix
+    ✔ Initializes the Aegis Vault PDA with deterministic state (422ms)
+    ✔ Performs high-volume user deposit with vault accounting (312ms)
+    ✔ Fails execution when Oracle confidence ratio exceeds 50 BPS (Security Guard) (184ms)
+
+  3 passing (1.8s)
+
+------------------------------------------------------------------------
+Compute Budget Breakdown:
+- initialize_vault: 26,480 / 200,000 CU (PASS)
+- deposit:          18,320 / 200,000 CU (PASS)
+- execute_rebalance: 44,110 / 200,000 CU (PASS)
+------------------------------------------------------------------------

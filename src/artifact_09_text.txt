@@ -1,0 +1,4 @@
+solpulse_keeper_heartbeat_timestamp 1714002910
+  solpulse_monitored_pools_total 1
+  solpulse_circuit_breaker_tripped_count 0
+  solpulse_rpc_latency_ms 42

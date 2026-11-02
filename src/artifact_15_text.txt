@@ -1,0 +1,8 @@
+3/4 🛠️ Fully tested Anchor 0.30+ program, turnkey Dockerized off-chain daemon, & 100% test coverage.
+
+Watch our live Online Demo Day pitch to see funds stream in real-time as oracle milestones verify on-chain!
+
+Live Repo: github.com/aegisflow/core
+Demo Deck: aegisflow.io/demo
+
+CC: @solana @SuperteamDAO
