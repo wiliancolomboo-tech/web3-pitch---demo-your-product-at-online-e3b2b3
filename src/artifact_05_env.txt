@@ -3,5 +3,5 @@ SOLANA_WS_URL=wss://api.devnet.solana.com
 SOLANA_HTTP_URL=https://api.devnet.solana.com
 KRONOS_PROGRAM_ID=KroNoSZ8M6hZqjFk6e6T4X3k2W1R3nU7pY9tB7d5k5b
 SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+RESEND_API_KEY=re_test_000000000000000000000000
 ALERT_EMAIL=cfo-treasury@sponsor-org.io

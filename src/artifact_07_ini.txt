@@ -7,7 +7,7 @@ SOLANA_PRIVATE_KEY=[14,242,12,87,192,44,...]
 
 # Enterprise Observability & Alerting
 SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+RESEND_API_KEY=re_test_000000000000000000000000
 AUDIT_EMAIL_RECIPIENT=treasury-audits@solana-demo.org
 
 # Telemetry Port

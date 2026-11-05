@@ -14,7 +14,7 @@ services:
       - AURASTREAM_PROGRAM_ID=Aura1111111111111111111111111111111111111111
       - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
       - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-      - RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+      - RESEND_API_KEY=re_test_000000000000000000000000
       - RESEND_SENDER_EMAIL=treasury@aurastream.io
       - FINANCE_AUDIT_EMAIL=cfo-ops@company.org
     logging:

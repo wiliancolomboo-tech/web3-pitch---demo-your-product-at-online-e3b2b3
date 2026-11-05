@@ -3,7 +3,7 @@ SOLANA_RPC_URL=https://api.devnet.solana.com
 PROGRAM_ID=StrM111111111111111111111111111111111111111
 
 # Enterprise Telemetry Integrations
-RESEND_API_KEY=re_demo_1234567890abcdef
+RESEND_API_KEY=re_test_000000000000000000000000
 DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 ADMIN_ALERT_EMAIL=treasury@enterprise.org
 PORT=8080

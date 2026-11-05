@@ -4,7 +4,7 @@ TARGET_VAULT_ADDRESS=5xM11111111111111111111111111111111111111111
 KEEPER_KEYPAIR_PATH=./secrets/keeper.json
 
 # Enterprise Telemetry Integrations
-RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+RESEND_API_KEY=re_test_000000000000000000000000
 ALERT_EMAIL_RECIPIENT=security-ops@enterprise.finance
 DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

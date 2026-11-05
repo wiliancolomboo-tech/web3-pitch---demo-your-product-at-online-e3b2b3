@@ -25,7 +25,7 @@ const CONFIG: SentinelConfig = {
   wsUrl: process.env.SOLANA_WS_URL || "ws://127.0.0.1:8900",
   programId: process.env.PROGRAM_ID || "Aegis11111111111111111111111111111111111111",
   guardianKeypairPath: process.env.GUARDIAN_KEYPAIR_PATH || "./guardian-keypair.json",
-  resendApiKey: process.env.RESEND_API_KEY || "re_test_mock_key_123456789",
+  resendApiKey: process.env.RESEND_API_KEY || "re_test_000000000000000000000000",
   resendAlertTo: process.env.ALERT_EMAIL || "security@enterprise-treasury.io",
   resendFromEmail: process.env.FROM_EMAIL || "alerts@aegisvault.fi",
   slackWebhookUrl: process.env.SLACK_WEBHOOK_URL || "",
